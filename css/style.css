@@ -103,7 +103,12 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 26px 0;
+    padding: 40px 0;
+}
+@media(max-width: 516px){
+    .header__block{
+        align-items: flex-start;
+    }
 }
 .header__logo{
     font-weight: 700;
@@ -112,7 +117,15 @@ body {
     text-transform: uppercase;
     color: #fff;
     z-index: 5;
-    text-align: center;
+}
+.header__logo:hover{
+	transition: all 0.6s ease 0s;
+    transform: rotate(360deg);
+}
+@media(max-width: 516px){
+    .header__logo{
+        padding: 8px 0 0 0;
+    }
 }
 .header__menu{
 }
@@ -123,18 +136,33 @@ body {
     margin: 0 15px;
     padding: 5px 0;
 }
-.menu-link{
+.menu-link {
+    display: inline-block;
+    padding-top: 3px;
+    line-height: 1.3;
     color: #fff;
+    font-size: 18px;
+}
+.menu-link::after{
+    display: block;
+    content: "";
+    height: 3px;
+    border-radius: 1px;
+    width: 0%;
+    background-color:  rgb(115, 64, 255);
+    transition: 0.4s ease-in-out;
+}
+.menu-link:hover:after,
+.menu-link:focus:after {
+    width: 100%;
 }
 .menu__item:first-child{
     background: url('../img/icon/Vector3.svg') no-repeat right;
     padding-right: 14px;
 }
 .menu__item:hover{
-    border-bottom: 1px solid #fff;
-    padding-bottom: 4px;
-    padding-right: 15px;
     background: url('../img/icon/Vector3.svg') no-repeat right;
+    padding-right: 15px;
 }
 .menu__item:active{
     opacity: 60%;
@@ -147,7 +175,7 @@ body {
         width: 100%;
         height: 100%;
         background-color: #2d2b2b;
-        padding: 160px 15px 30px 15px;
+        padding: 110px 15px 30px 15px;
         transition: left 0.3s ease 0s;
     }
     .header:target .header__menu{
@@ -168,6 +196,22 @@ body {
         margin-bottom: 0;
     }
 }
+@media(max-width: 375.98px){
+    .menu-link{
+        font-size: 18px;
+    }
+    .menu__item{
+        margin: 0 0 15px 0;
+    }
+}
+@media(max-width: 320.98px){
+    .menu-link{
+        font-size: 16px;
+    }
+    .menu__item{
+        margin: 0 0 15px 0;
+    }
+}
 /*======================================*/
 .header__button{
     display: flex;
@@ -179,7 +223,7 @@ body {
     white-space: nowrap;
     text-align: center;
     color: #fff;
-    padding: 15px;
+    padding: 14px;
     margin: 0 35px 0 0;
     z-index: 5;
 }
@@ -217,7 +261,7 @@ body {
 @media(max-width: 516px){
     .header__button{
         flex-wrap: wrap;
-        padding: 66px 0 0 0;
+        padding: 0px 0 0 0;
         margin: 0;
         flex: 0 0;
     }
@@ -669,9 +713,15 @@ body {
     border-radius: 20px;
     background-color: #FFFFFF;
 }
+@media(max-width: 666px){
+    .germany__block-title{
+        flex-direction: column;
+    }
+}
 .germany__title {
     text-align: center;
     margin: 40px 0 38px 0;
+    padding: 0 15px;
     font-weight: 800;
     font-size: 34px;
     line-height: 46px;
@@ -685,8 +735,9 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
-@media(max-width: 670px){
+@media(max-width: 666px){
     .germany__menu{
+        flex-direction: column;
     }
 }
 .germany__item {
@@ -696,7 +747,8 @@ body {
     letter-spacing: -0.02em;
     color: #64607D;
     display: flex;
-    padding: 15px 0;
+    padding: 15px 15px 15px 0;
+    margin: 0 0 25px 0;
 }
 @media(max-width: 752px){
     .germany__item{
@@ -704,18 +756,23 @@ body {
     }
 }
 .germany__item:nth-child(1){
-    margin: 0 110px 0 0;
+    margin: 0 80px 0 0;
 }
 .germany__item:nth-child(2){
-    margin: 0 110px 0 0;
+    margin: 0 80px 0 0;
+}
+@media(max-width: 666px){
+    .germany__item:nth-child(2){
+        margin: 0 110px 0 0;
+    }
 }
 .germany__menu .germany__item:nth-child(1)::before{
     content: url('../img/icon/Frame.svg');
 	display: inline-block;
 	position: absolute;
-	top: 18.10px;
+	top: 19px;
 	left: -78px; 
-    padding: 6%;
+    padding: 12px;
 	color: #E8F2FF;
 	text-align: center;
 	font-size: 46px;
@@ -728,9 +785,9 @@ body {
     content: url('../img/icon/Frame\ \(1\).svg');
 	display: inline-block;
 	position: absolute;
-	top: 18.10px;
+	top: 20px;
 	left: -78px; 
-    padding: 10%;
+    padding: 14px;
 	color: #E8F2FF;
 	text-align: center;
 	font-size: 46px;
@@ -743,9 +800,9 @@ body {
     content: url('../img/icon/Frame\ \(2\).svg');
 	display: inline-block;
 	position: absolute;
-	top: 18.10px;	
+	top: 20px;	
     left: -78px;
-    padding: 10%;
+    padding: 14px;
 	color: #E8F2FF;
 	text-align: center;
 	font-size: 46px;
